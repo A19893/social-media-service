@@ -6,7 +6,7 @@ import { createPost, getFeedPosts, getUserPosts, likePost } from '../controllers
 // Routes with files
 const router = express.Router();
 
-router.post('/auth/register', verifiedToken,  upload.single('picture'), createPost);
+router.post('/', verifiedToken,  upload.single('picture'), createPost);
 /* READ */
 router.get("/", verifiedToken, getFeedPosts);
 router.get("/:userId/posts", verifiedToken, getUserPosts);
